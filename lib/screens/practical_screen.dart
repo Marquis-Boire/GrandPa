@@ -56,13 +56,18 @@ class PracticalScreen extends StatelessWidget {
 
 Widget _practical(String title) {
   return Expanded(
-    child: Container(
-      alignment: Alignment.center,
+    child: Card(
       color: Colors.blue,
-      height: 100.0,
-      child: Text(
-        title,
-        style: kLevelTextStyle,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Container(
+        alignment: Alignment.center,
+        height: 100.0,
+        child: Text(
+          title,
+          style: kLevelTextStyle,
+        ),
       ),
     ),
   );

@@ -17,11 +17,11 @@ class CoursesScreen extends StatelessWidget {
         margin: EdgeInsets.all(20.0),
         child: Column(
           children: <Widget>[
-            _content(context, 'Physics Practicals'),
+            _content(context, 'PHY 103'),
             SizedBox(
               height: 20.0,
             ),
-            _content(context, 'Chemistry Practicals'),
+            _content(context, 'CHE 103'),
           ],
         ),
       ),
@@ -31,18 +31,23 @@ class CoursesScreen extends StatelessWidget {
 
 Widget _content(BuildContext context, String title) {
   return Expanded(
-    child: InkWell(
-      onTap: () {
-        Navigator.of(context).pushNamed(PracticalScreen.routeName);
-      },
-      child: Container(
-        alignment: Alignment.center,
-        width: double.infinity,
-        color: Colors.blue,
-        height: 200.0,
-        child: Text(
-          title,
-          style: kLevelTextStyle,
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      color: Colors.blue,
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).pushNamed(PracticalScreen.routeName);
+        },
+        child: Container(
+          alignment: Alignment.center,
+          width: double.infinity,
+          height: 200.0,
+          child: Text(
+            title,
+            style: kLevelTextStyle,
+          ),
         ),
       ),
     ),
