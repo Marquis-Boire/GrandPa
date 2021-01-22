@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './screens/courses_screen.dart';
 import './screens/home_screen.dart';
+import './screens/practical_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       routes: {
         CoursesScreen.routeName: (context) => CoursesScreen(),
+        PracticalScreen.routeName: (context) => PracticalScreen(),
       },
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
+import '../screens/courses_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/';
@@ -18,7 +19,10 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(CoursesScreen.routeName,
+                          arguments: 'level 100');
+                    },
                     child: Container(
                       height: 200,
                       color: Colors.blue,
@@ -33,7 +37,10 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(width: 20.0),
                 Expanded(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(CoursesScreen.routeName,
+                          arguments: 'level 200');
+                    },
                     child: Container(
                       height: 200,
                       color: Colors.blue,
@@ -52,7 +59,10 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(CoursesScreen.routeName,
+                          arguments: 'level 300');
+                    },
                     child: Container(
                       height: 200,
                       color: Colors.blue,
@@ -67,7 +77,10 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(width: 20.0),
                 Expanded(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(CoursesScreen.routeName,
+                          arguments: 'level 400');
+                    },
                     child: Container(
                       height: 200,
                       color: Colors.blue,
