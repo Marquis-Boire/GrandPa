@@ -1,73 +1,69 @@
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart';
-import '../screens/physics_practical_screen.dart';
+import '../widgets/app_drawer.dart';
 import '../widgets/app_header.dart';
 import '../widgets/separator.dart';
 
-class CoursesScreen extends StatelessWidget {
-  static const routeName = '/courses';
+class AdminContactScreen extends StatelessWidget {
+  static const routeName = '/contact';
   @override
   Widget build(BuildContext context) {
-    final info = ModalRoute.of(context).settings.arguments as String;
-
     return Scaffold(
+      drawer: AppDrawer(),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
-            children: [
+            children: <Widget>[
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  // _buildMenuBar(),
-                  // SizedBox(
-                  //   width: 50.0,
-                  // ),
+                  _buildMenuBar(),
+                  SizedBox(
+                    width: 30.0,
+                  ),
                   AppHeader(),
                 ],
               ),
               Separator(),
+              SizedBox(
+                height: 20.0,
+              ),
               Container(
-                margin: EdgeInsets.all(20.0),
-                child: Column(
+                child: Text('Admin Contact '),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Separator(),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    info == '200' || info == '300' || info == '400'
-                        ? Center(
-                            child: Text('Content will be added soon'),
-                          )
-                        : _content(context, 'PHY 103'),
+                    Text('Email: '),
+                    Text('mathematics06physics@gmail.com'),
                   ],
                 ),
               ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('Phone: '),
+                    Text('+233 558 159 629'),
+                  ],
+                ),
+              )
             ],
           ),
         ),
       ),
     );
   }
-}
-
-Widget _content(BuildContext context, String title) {
-  return Card(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10.0),
-    ),
-    color: Colors.blue,
-    child: InkWell(
-      onTap: () {
-        Navigator.of(context).pushNamed(PhysicsPracticalScreen.routeName);
-      },
-      child: Container(
-        alignment: Alignment.center,
-        width: double.infinity,
-        height: 200.0,
-        child: Text(
-          title,
-          style: kLevelTextStyle,
-        ),
-      ),
-    ),
-  );
 }
 
 Widget _buildMenuBar() {
