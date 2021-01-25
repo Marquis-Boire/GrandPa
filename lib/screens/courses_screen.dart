@@ -30,10 +30,14 @@ class CoursesScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.all(20.0),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     info == '200' || info == '300' || info == '400'
                         ? Center(
-                            child: Text('Content will be added soon'),
+                            child: Text(
+                              'Content will be added soon',
+                              style: kInfoTextStyle,
+                            ),
                           )
                         : _content(context, 'PHY 103'),
                   ],
@@ -49,6 +53,8 @@ class CoursesScreen extends StatelessWidget {
 
 Widget _content(BuildContext context, String title) {
   return Card(
+    elevation: 10.0,
+    shadowColor: Colors.white,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0),
     ),

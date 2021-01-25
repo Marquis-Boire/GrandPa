@@ -108,6 +108,8 @@ Widget _practical(BuildContext context, String title, String id) {
             .pushNamed(PracticalArticleScreen.routeName, arguments: id);
       },
       child: Card(
+        elevation: 15,
+        shadowColor: Colors.white,
         color: Colors.blue,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),

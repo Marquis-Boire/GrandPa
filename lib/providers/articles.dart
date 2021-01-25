@@ -6,13 +6,7 @@ import 'package:http/http.dart' as http;
 import '../models/article.dart';
 
 class Articles with ChangeNotifier {
-  List<Article> _articles = [
-    Article(
-      id: 'p10',
-      level: 'Level 100',
-      imageUrl: 'https://i.ibb.co/Jym5PTt/p1-exp2.jpg',
-    ),
-  ];
+  List<Article> _articles = [];
 
   List<Article> get articles {
     return [..._articles];

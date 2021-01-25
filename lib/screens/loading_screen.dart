@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:provider/provider.dart';
 
+import '../constants/constants.dart';
 import '../providers/articles.dart';
 import '../screens/home_screen.dart';
+import '../widgets/separator.dart';
 
 class LoadingScreen extends StatefulWidget {
   static const routeName = '/loading';
@@ -82,16 +84,34 @@ class _LoadingScreenState extends State<LoadingScreen> {
                           children: [
                             Text(
                               'Online GrandPa',
+                              style: kLoadingTitleTextStyle,
                               textAlign: TextAlign.center,
                             ),
+                            SizedBox(
+                              height: 7.0,
+                            ),
+                            Separator(),
                             Container(
                               margin: EdgeInsets.all(10.0),
                               alignment: Alignment.center,
                               child: Text(
                                 'A thorough guide on how to ace UCC Physical Science Practicals',
+                                style: kLoadingSubtitleTextStyle,
                                 textAlign: TextAlign.center,
                               ),
                             ),
+                            SizedBox(
+                              height: 10.0,
+                            ),
+                            // Container(
+                            //   margin: EdgeInsets.all(10.0),
+                            //   alignment: Alignment.center,
+                            //   child: Text(
+                            //     'One App for all your practical needs',
+                            //     style: kLoadingSubtitleTextStyle,
+                            //     textAlign: TextAlign.center,
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),

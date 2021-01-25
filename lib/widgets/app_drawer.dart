@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
-import '../screens/admin_auth_screen.dart';
+import '../screens/about_app_screen.dart';
 import '../screens/admin_contact_screen.dart';
+import '../screens/admin_panel_screen.dart';
 import '../screens/home_screen.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -17,18 +18,23 @@ class AppDrawer extends StatelessWidget {
             Container(
               height: 200,
               color: Colors.pinkAccent,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'A SolveShare Production',
-                    style: kLevelTextStyle,
+              child: Container(
+                child: CircleAvatar(
+                  radius: 90,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'From SolveShare',
+                        style: kLevelTextStyle,
+                      ),
+                      Text(
+                        '@2021',
+                        style: kLevelTextStyle,
+                      ),
+                    ],
                   ),
-                  Text(
-                    '@2021',
-                    style: kLevelTextStyle,
-                  ),
-                ],
+                ),
               ),
               alignment: Alignment.center,
             ),
@@ -42,10 +48,18 @@ class AppDrawer extends StatelessWidget {
             ),
             _drawerItem(
               context,
+              Icons.info,
+              'About App',
+              () {
+                Navigator.of(context).pushNamed(AboutAppScreen.routeName);
+              },
+            ),
+            _drawerItem(
+              context,
               Icons.verified_user,
               'Admin Account',
               () {
-                Navigator.of(context).pushNamed(AdminAuthScreen.routeName);
+                Navigator.of(context).pushNamed(AdminPanelScreen.routeName);
               },
             ),
             _drawerItem(
@@ -55,6 +69,13 @@ class AppDrawer extends StatelessWidget {
               () {
                 Navigator.of(context).pushNamed(AdminContactScreen.routeName);
               },
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 20.0),
+              child: Text(
+                'version: 1.0.0',
+                style: kVersionTextStyle,
+              ),
             ),
           ],
         ),
@@ -72,7 +93,10 @@ Widget _drawerItem(BuildContext context, IconData iconData, String title,
         iconData,
         color: Colors.pink,
       ),
-      title: Text(title),
+      title: Text(
+        title,
+        style: kDrawerItemTextStyle,
+      ),
     ),
   );
 }

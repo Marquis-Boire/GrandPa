@@ -3,6 +3,7 @@ import 'package:grandPa/providers/articles.dart';
 import 'package:provider/provider.dart';
 
 import './providers/articles.dart';
+import './screens/about_app_screen.dart';
 import './screens/admin_auth_screen.dart';
 import './screens/admin_contact_screen.dart';
 import './screens/admin_panel_screen.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
           AdminPanelScreen.routeName: (context) => AdminPanelScreen(),
           LoadingScreen.routeName: (context) => LoadingScreen(),
           AdminContactScreen.routeName: (context) => AdminContactScreen(),
+          AboutAppScreen.routeName: (context) => AboutAppScreen(),
         },
       ),
     );

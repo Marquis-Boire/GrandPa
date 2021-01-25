@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
@@ -5,8 +6,8 @@ import '../widgets/app_drawer.dart';
 import '../widgets/app_header.dart';
 import '../widgets/separator.dart';
 
-class AdminContactScreen extends StatelessWidget {
-  static const routeName = '/contact';
+class AboutAppScreen extends StatelessWidget {
+  static const routeName = '/about';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,12 +15,13 @@ class AdminContactScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
-            children: <Widget>[
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
               Row(
                 children: <Widget>[
                   _buildMenuBar(),
                   SizedBox(
-                    width: 30.0,
+                    width: 15.0,
                   ),
                   AppHeader(),
                 ],
@@ -29,9 +31,11 @@ class AdminContactScreen extends StatelessWidget {
                 height: 20.0,
               ),
               Container(
+                alignment: Alignment.center,
                 child: Text(
-                  'Admin Contact',
-                  style: kAdminContactTextStyle,
+                  'About App',
+                  style: kQuickNoticeTextStyle,
+                  textAlign: TextAlign.center,
                 ),
               ),
               SizedBox(
@@ -39,49 +43,66 @@ class AdminContactScreen extends StatelessWidget {
               ),
               Separator(),
               SizedBox(
-                height: 20.0,
+                height: 50.0,
               ),
               Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Email: ',
-                      style: kAdminEmailTextStyle,
-                    ),
-                    Text(
-                      'mathematics06physics@gmail.com',
-                      style: kAdminEmailTextStyle,
-                    ),
-                  ],
+                alignment: Alignment.center,
+                child: Text(
+                  'This app is for Level 100 students offering PHY103 '
+                  'as a course in the first semester and for anyone doing a similar course.',
+                  style: kAboutAppTextStyle,
+                  textAlign: TextAlign.center,
                 ),
               ),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
+              ),
+              SizedBox(
+                height: 10.0,
               ),
               Separator(),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Phone: ',
-                      style: kAdminPhoneTextStyle,
-                    ),
-                    Text(
-                      '+233 558 159 629',
-                      style: kAdminPhoneTextStyle,
-                    ),
-                  ],
+                alignment: Alignment.center,
+                child: Text(
+                  'The content of this app is not standalone and as such is to be used in conjunction with the '
+                  'PHY103 Laboratory Manual for General Physics Practicals Book.'
+                  'This app is to guide you through the practicals and to help you easily ACE '
+                  'PHY103 practical write up and the PHY103 Exams.',
+                  style: kAboutAppTextStyle,
+                  textAlign: TextAlign.center,
                 ),
               ),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               Separator(),
+              SizedBox(
+                height: 10.0,
+              ),
+              SizedBox(
+                height: 90.0,
+              ),
+              Separator(),
+              Container(
+                padding: EdgeInsets.all(10),
+                alignment: Alignment.center,
+                child: Text(
+                  'Made With Love from '
+                  'SOLVESHARE',
+                  style: kNameTextStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Separator(),
+              SizedBox(
+                height: 10.0,
+              ),
             ],
           ),
         ),

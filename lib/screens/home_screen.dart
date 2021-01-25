@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
@@ -40,17 +41,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       children: <Widget>[
                         _expandedCard(context, 'Level 100', '100'),
-                        SizedBox(width: 20.0),
-                        _expandedCard(context, 'Level 200', '200'),
                       ],
                     ),
                     SizedBox(height: 20.0),
-                    Row(
-                      children: <Widget>[
-                        _expandedCard(context, 'Level 300', '300'),
-                        SizedBox(width: 20.0),
-                        _expandedCard(context, 'Level 400', '400'),
-                      ],
+                    Separator(),
+                    SizedBox(height: 20.0),
+                    Text(
+                      'Quick Notice',
+                      style: kQuickNoticeTextStyle,
+                    ),
+                    SizedBox(height: 20.0),
+                    Separator(),
+                    SizedBox(height: 20.0),
+                    Text(
+                      'Open the navigation drawer and go to the about app screen',
+                      style: kAboutAppTextStyle,
+                      textAlign: TextAlign.center,
                     ),
                   ],
                 ),
@@ -72,7 +78,8 @@ Widget _expandedCard(BuildContext context, String title, String level) {
       },
       child: Card(
         color: Colors.blue,
-        elevation: 6,
+        elevation: 100,
+        shadowColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),

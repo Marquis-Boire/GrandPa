@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:provider/provider.dart';
 
+import '../constants/constants.dart';
 import '../providers/articles.dart';
 
 class PracticalArticleScreen extends StatefulWidget {
@@ -13,6 +15,9 @@ class PracticalArticleScreen extends StatefulWidget {
 class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
   // var id = '';
   var _isLoading = false;
+  Future<void> secureScreen() async {
+    await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+  }
 
   @override
   void didChangeDependencies() {
@@ -38,6 +43,7 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
         _isLoading = false;
       });
     });
+    secureScreen();
     super.initState();
   }
 
@@ -58,6 +64,7 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
                           alignment: Alignment.center,
                           child: Text(
                             'No Data Found',
+                            style: kNoDataTextStyle,
                           ),
                         )
                       ],
