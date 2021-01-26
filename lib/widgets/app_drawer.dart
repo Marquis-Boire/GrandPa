@@ -19,25 +19,23 @@ class AppDrawer extends StatelessWidget {
               height: 200,
               color: Colors.pinkAccent,
               child: Container(
-                child: CircleAvatar(
-                  radius: 90,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'From SolveShare',
-                        style: kLevelTextStyle,
-                      ),
-                      Text(
-                        '@2021',
-                        style: kLevelTextStyle,
-                      ),
-                    ],
-                  ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'From SolveShare',
+                      style: kLevelTextStyle,
+                    ),
+                    Text(
+                      '@2021',
+                      style: kLevelTextStyle,
+                    ),
+                  ],
                 ),
               ),
               alignment: Alignment.center,
             ),
+
             _drawerItem(
               context,
               Icons.home,
@@ -54,14 +52,14 @@ class AppDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(AboutAppScreen.routeName);
               },
             ),
-            _drawerItem(
-              context,
-              Icons.verified_user,
-              'Admin Account',
-              () {
-                Navigator.of(context).pushNamed(AdminPanelScreen.routeName);
-              },
-            ),
+            // _drawerItem(
+            // context,
+            // Icons.verified_user,
+            // 'Admin Account',
+            // () {
+            // Navigator.of(context).pushNamed(AdminPanelScreen.routeName);
+            // },
+            // ),
             _drawerItem(
               context,
               Icons.call,
