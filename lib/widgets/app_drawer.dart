@@ -52,14 +52,14 @@ class AppDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(AboutAppScreen.routeName);
               },
             ),
-            // _drawerItem(
-            // context,
-            // Icons.verified_user,
-            // 'Admin Account',
-            // () {
-            // Navigator.of(context).pushNamed(AdminPanelScreen.routeName);
-            // },
-            // ),
+            _drawerItem(
+            context,
+            Icons.verified_user,
+            'Admin Account',
+            () {
+            Navigator.of(context).pushNamed(AdminPanelScreen.routeName);
+            },
+            ),
             _drawerItem(
               context,
               Icons.call,

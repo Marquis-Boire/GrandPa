@@ -1,4 +1,4 @@
-package com.example.online_grandpa;
+package com.solveshare.online_grandpa;
 
 import android.os.Bundle;
 import io.flutter.plugins.GeneratedPluginRegistrant;
@@ -12,10 +12,10 @@ import io.flutter.embedding.android.FlutterFragmentActivity;
 
 public class MainActivity extends FlutterFragmentActivity{
 
-@Override
+    @Override
 
-public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine){
-    GeneratedPluginRegistrant.registerWith(flutterEngine);
-}
+    public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine){
+        GeneratedPluginRegistrant.registerWith(flutterEngine);
+    }
 
 }
