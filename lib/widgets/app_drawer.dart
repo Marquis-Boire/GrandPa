@@ -35,7 +35,6 @@ class AppDrawer extends StatelessWidget {
               ),
               alignment: Alignment.center,
             ),
-
             _drawerItem(
               context,
               Icons.home,
@@ -53,12 +52,12 @@ class AppDrawer extends StatelessWidget {
               },
             ),
             _drawerItem(
-            context,
-            Icons.verified_user,
-            'Admin Account',
-            () {
-            Navigator.of(context).pushNamed(AdminPanelScreen.routeName);
-            },
+              context,
+              Icons.verified_user,
+              'Admin Account',
+              () {
+                Navigator.of(context).pushNamed(AdminPanelScreen.routeName);
+              },
             ),
             _drawerItem(
               context,
