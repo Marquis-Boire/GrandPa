@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 import '../screens/about_app_screen.dart';
 import '../screens/admin_contact_screen.dart';
-import '../screens/admin_panel_screen.dart';
 import '../screens/home_screen.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -51,14 +50,14 @@ class AppDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(AboutAppScreen.routeName);
               },
             ),
-            _drawerItem(
-              context,
-              Icons.verified_user,
-              'Admin Account',
-              () {
-                Navigator.of(context).pushNamed(AdminPanelScreen.routeName);
-              },
-            ),
+            // _drawerItem(
+            //   context,
+            //   Icons.verified_user,
+            //   'Admin Account',
+            //   () {
+            //     Navigator.of(context).pushNamed(AdminPanelScreen.routeName);
+            //   },
+            // ),
             _drawerItem(
               context,
               Icons.call,

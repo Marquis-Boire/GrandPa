@@ -38,7 +38,7 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
       _isLoading = true;
     });
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 10), () {
       setState(() {
         _isLoading = false;
       });
@@ -57,6 +57,13 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
         child: SafeArea(
           child: Column(
             children: <Widget>[
+              _isLoading == true
+                  ? Center(
+                      child: Text('Loading...'),
+                    )
+                  : Center(
+                      child: Text(''),
+                    ),
               articles.length == 0
                   ? Column(
                       children: <Widget>[

@@ -90,7 +90,7 @@ class AboutAppScreen extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 alignment: Alignment.center,
                 child: Text(
-                  'Made With Love from '
+                  'Made With Love From '
                   'SOLVESHARE',
                   style: kNameTextStyle,
                   textAlign: TextAlign.center,
