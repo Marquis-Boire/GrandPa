@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:provider/provider.dart';
 
+import 'package:loading_indicator/loading_indicator.dart';
 import '../constants/constants.dart';
 import '../providers/articles.dart';
 import '../widgets/article_list.dart';
@@ -60,7 +61,13 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
             children: <Widget>[
               _isLoading == true
                   ? Center(
-                      child: Text('Loading...'),
+                      child: Container(
+                        width: 30.0,
+                        height: 10.0,
+                        child: LoadingIndicator(
+                          indicatorType: Indicator.ballBeat,
+                        ),
+                      ),
                     )
                   : Center(
                       child: Text(''),

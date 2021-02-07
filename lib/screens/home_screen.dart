@@ -25,11 +25,9 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   _buildMenuBar(),
-                  SizedBox(
-                    width: 50.0,
-                  ),
                   AppHeader(),
                 ],
               ),
