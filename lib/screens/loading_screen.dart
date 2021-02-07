@@ -18,7 +18,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
   var _isLoading = false;
 
   @override
-  void didChangeDependencies() {
+  void initState() {
+    super.initState();
     if (_isInit) {
       setState(() {
         _isLoading = true;
@@ -38,7 +39,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
       });
     }
     _isInit = false;
-    super.didChangeDependencies();
   }
 
   @override
