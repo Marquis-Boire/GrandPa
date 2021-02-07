@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../constants/constants.dart';
 import '../providers/articles.dart';
+import '../widgets/article_list.dart';
 
 class PracticalArticleScreen extends StatefulWidget {
   static const routeName = '/article';
@@ -76,17 +77,96 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
                         )
                       ],
                     )
-                  : Container(
-                      child: Column(
-                        children: articles.map(
-                          (article) {
-                            return Image.network(article.imageUrl);
-                          },
-                          // Text(article.imageUrl),
-                        ).toList(),
+                  : ArticleList(articles),
+              Container(
+                color: Colors.blue,
+                margin: EdgeInsets.only(top: 10.0),
+                padding: EdgeInsets.all(20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(5.0),
+                          child: Text(
+                            'likes',
+                            style: kLikeTextStyle,
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(5.0),
+                          child: IconButton(
+                            splashColor: Colors.greenAccent,
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_downward,
+                              color: Colors.white,
+                              size: 30.0,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      // decoration: BoxDecoration(
+                      //   border: Border.all(
+                      //     width: 1.0,
+                      //     color: Colors.black12,
+                      //   ),
+                      //   color: Colors.black12,
+                      //   borderRadius: BorderRadius.circular(5.0),
+                      // ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 3.0, right: 3.0),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.black12,
+                                ),
+                                padding: EdgeInsets.all(5.0),
+                                child: Text('2')),
+                            InkWell(
+                              borderRadius: BorderRadius.circular(15.0),
+                              splashColor: Colors.white,
+                              onTap: () {},
+                              child: Container(
+                                padding: EdgeInsets.all(6.0),
+                                child: Text(
+                                  'Comments',
+                                  style: kAnswerTextStyle,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-
+                    InkWell(
+                      borderRadius: BorderRadius.circular(15.0),
+                      splashColor: Colors.lightBlue,
+                      onTap: () {},
+                      child: Card(
+                        elevation: 10,
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: Icon(
+                            Icons.add,
+                            color: Colors.blue,
+                            size: 30.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               // <Widget>[
               //   Image.asset('images/p1_exp1.jpg'),
               //   Text(id),
