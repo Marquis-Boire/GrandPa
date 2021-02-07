@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:provider/provider.dart';
 
+import 'package:loading_indicator/loading_indicator.dart';
 import '../constants/constants.dart';
 import '../providers/articles.dart';
 import '../widgets/article_list.dart';
@@ -60,7 +61,13 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
             children: <Widget>[
               _isLoading == true
                   ? Center(
-                      child: Text('Loading...'),
+                      child: Container(
+                        width: 30.0,
+                        height: 10.0,
+                        child: LoadingIndicator(
+                          indicatorType: Indicator.ballBeat,
+                        ),
+                      ),
                     )
                   : Center(
                       child: Text(''),
@@ -79,93 +86,7 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
                     )
                   : ArticleList(articles),
               Container(
-                color: Colors.blue,
-                margin: EdgeInsets.only(top: 10.0),
-                padding: EdgeInsets.all(20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(5.0),
-                          child: Text(
-                            'likes',
-                            style: kLikeTextStyle,
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(5.0),
-                          child: IconButton(
-                            splashColor: Colors.greenAccent,
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_downward,
-                              color: Colors.white,
-                              size: 30.0,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      // decoration: BoxDecoration(
-                      //   border: Border.all(
-                      //     width: 1.0,
-                      //     color: Colors.black12,
-                      //   ),
-                      //   color: Colors.black12,
-                      //   borderRadius: BorderRadius.circular(5.0),
-                      // ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 3.0, right: 3.0),
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.black12,
-                                ),
-                                padding: EdgeInsets.all(5.0),
-                                child: Text('2')),
-                            InkWell(
-                              borderRadius: BorderRadius.circular(15.0),
-                              splashColor: Colors.white,
-                              onTap: () {},
-                              child: Container(
-                                padding: EdgeInsets.all(6.0),
-                                child: Text(
-                                  'Comments',
-                                  style: kAnswerTextStyle,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      borderRadius: BorderRadius.circular(15.0),
-                      splashColor: Colors.lightBlue,
-                      onTap: () {},
-                      child: Card(
-                        elevation: 10,
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(2.0),
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.blue,
-                            size: 30.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                height: 50.0,
               ),
               // <Widget>[
               //   Image.asset('images/p1_exp1.jpg'),
