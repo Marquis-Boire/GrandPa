@@ -60,14 +60,18 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
           child: Column(
             children: <Widget>[
               _isLoading == true
-                  ? Center(
-                      child: Container(
-                        width: 30.0,
-                        height: 10.0,
-                        child: LoadingIndicator(
-                          indicatorType: Indicator.ballBeat,
+                  ? Column(
+                      children: <Widget>[
+                        Center(
+                          child: Container(
+                            width: 30.0,
+                            height: 20.0,
+                            child: LoadingIndicator(
+                              indicatorType: Indicator.ballBeat,
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     )
                   : Center(
                       child: Text(''),
