@@ -65,23 +65,16 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
                         Center(
                           child: Container(
                             width: 30.0,
-<<<<<<< HEAD
-                            height: 10.0,
-=======
                             height: 20.0,
->>>>>>> junior
                             child: LoadingIndicator(
                               indicatorType: Indicator.ballBeat,
                             ),
                           ),
                         ),
-<<<<<<< HEAD
                         Center(
                           child: Text(
                               'Makae sure you are connected to the internet'),
                         )
-=======
->>>>>>> junior
                       ],
                     )
                   : Center(
