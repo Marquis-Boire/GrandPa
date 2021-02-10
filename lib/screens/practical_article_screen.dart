@@ -59,28 +59,6 @@ class _PracticalArticleScreenState extends State<PracticalArticleScreen> {
         child: SafeArea(
           child: Column(
             children: <Widget>[
-              _isLoading == true
-                  ? Column(
-                      children: <Widget>[
-                        Center(
-                          child: Container(
-                            width: 30.0,
-                            height: 20.0,
-                            child: LoadingIndicator(
-                              indicatorType: Indicator.ballBeat,
-                            ),
-                          ),
-                        ),
-                        Center(
-                          child: Text(
-                              'Makae sure you are connected to the internet'),
-                        )
-                      ],
-                    )
-                  : Center(
-                      child: Text(''),
-                    ),
-
               articles.length == 0
                   ? Column(
                       children: <Widget>[
