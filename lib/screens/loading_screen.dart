@@ -20,25 +20,23 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
     super.initState();
-    if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-      Future.delayed(Duration(seconds: 3), () async {
-        try {
-          await Provider.of<Articles>(context, listen: false)
-              .fetchArticles()
-              .then((_) {
-            setState(() {
-              _isLoading = false;
-            });
+
+    setState(() {
+      _isLoading = true;
+    });
+    Future.delayed(Duration(seconds: 3), () async {
+      try {
+        await Provider.of<Articles>(context, listen: false)
+            .fetchArticles()
+            .then((_) {
+          setState(() {
+            _isLoading = false;
           });
-        } catch (error) {
-          print(error);
-        }
-      });
-    }
-    _isInit = false;
+        });
+      } catch (error) {
+        print(error);
+      }
+    });
   }
 
   @override
