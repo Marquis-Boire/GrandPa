@@ -17,7 +17,7 @@ class ArticleItem extends StatelessWidget {
           Center(
             child: Container(
               width: 30.0,
-              height: 20.0,
+              height: 10.0,
               child: LoadingIndicator(
                 indicatorType: Indicator.ballBeat,
               ),
